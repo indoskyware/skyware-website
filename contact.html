@@ -1,150 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | IndoSkyware</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Indoskyware Group - Get in touch for AI-first IT solutions. We're here to help with your digital transformation needs.">
+  <title>Contact Us | Indoskyware Group</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logos/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">IndoSkyware</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <a href="contact.html" class="btn btn-outline">Get Demo</a>
-        </div>
-    </nav>
+  <header class="header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+          <circle cx="24" cy="24" r="8" fill="currentColor"/>
+          <circle cx="12" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+          <circle cx="36" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+          <circle cx="12" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+          <circle cx="36" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+          <line x1="16" y1="18" x2="20" y2="22" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="32" y1="18" x2="28" y2="22" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="16" y1="30" x2="20" y2="26" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="32" y1="30" x2="28" y2="26" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-text">Indoskyware</span>
+      </a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/business-units.html" class="nav-link">Business Units</a></li>
+          <li><a href="/contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Page Header -->
-    <header class="page-header">
+  <main>
+    <section class="page-hero">
+      <div class="container">
         <h1>Contact Us</h1>
-        <p>Get in touch with our team for demos, inquiries, or partnerships</p>
-    </header>
+        <p class="page-subtitle">Let's discuss how we can help transform your business</p>
+      </div>
+    </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <h3>Send us a Message</h3>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Have a project in mind or want to learn more about our services? We'd love to hear from you.</p>
+            
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                <div class="method-details">
+                  <h3>Visit Us</h3>
+                  <p>Jakarta, Indonesia</p>
                 </div>
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company" placeholder="Your Company">
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
                 </div>
-                <div class="form-group">
-                    <label for="product">Interested Product</label>
-                    <select id="product" name="product">
-                        <option value="">Select a product</option>
-                        <option value="listie">Listie AI</option>
-                        <option value="hros">HROS</option>
-                        <option value="letsee">Letsee</option>
-                        <option value="erp">Skyware ERP</option>
-                        <option value="custom">Custom Development</option>
-                    </select>
+                <div class="method-details">
+                  <h3>Email</h3>
+                  <p>hello@indoskyware.com</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your project or requirements..."></textarea>
+              </div>
+              
+              <div class="contact-method">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div class="method-details">
+                  <h3>Phone</h3>
+                  <p>+62 21 1234 5678</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="business-units-contact">
+              <h3>Business Units</h3>
+              <p>Reach out directly to the team that best fits your needs:</p>
+              <ul class="units-contact-list">
+                <li><a href="mailto:skytech@indoskyware.com">SkyTech Solutions</a></li>
+                <li><a href="mailto:skybusiness@indoskyware.com">SkyBusiness Software</a></li>
+                <li><a href="mailto:skydigital@indoskyware.com">SkyDigital Agency</a></li>
+                <li><a href="mailto:skycloud@indoskyware.com">SkyCloud Services</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form">
+              <h3>Send us a Message</h3>
+              
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your Company">
+              </div>
+              
+              <div class="form-group">
+                <label for="service">Service Interest *</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="skytech">SkyTech Solutions</option>
+                  <option value="skybusiness">SkyBusiness Software</option>
+                  <option value="skydigital">SkyDigital Agency</option>
+                  <option value="skycloud">SkyCloud Services</option>
+                  <option value="other">General Inquiry</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or questions..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-full">Send Message</button>
             </form>
+          </div>
         </div>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-            <h3>Contact Information</h3>
-            
-            <div class="info-item">
-                <h4>📍 Office Address</h4>
-                <p>APL Tower, 26th Floor, Unit T3<br>Jl. Letjen S. Parman Kav. 28<br>Tanjung Duren Selatan, Grogol Petamburan<br>Jakarta Barat, DKI Jakarta 11470</p>
-            </div>
-            
-            <div class="info-item">
-                <h4>✉️ Email</h4>
-                <p>info@indoskyware.com<br>help@sky-support.net (Support)</p>
-            </div>
-            
-            <div class="info-item">
-                <h4>📞 Phone</h4>
-                <p>+62 21 1234 5678</p>
-            </div>
-            
-            <div class="info-item">
-                <h4>🕐 Business Hours</h4>
-                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
-            </div>
-            
-            <div class="info-item">
-                <h4>🔗 Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/indoskyware" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/indoskyware" target="_blank">Instagram</a>
-                    <a href="https://x.com/SkywareID" target="_blank">X</a>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Map -->
-    <section class="contact-section" style="padding-top: 0;">
-        <div class="map-container">
-            <p>📍 Google Maps - Jakarta Barat Location</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="24" r="8" fill="currentColor"/>
+              <circle cx="12" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+              <circle cx="36" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+              <circle cx="12" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+              <circle cx="36" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+            </svg>
+            <span class="logo-text">Indoskyware</span>
+          </a>
+          <p>AI-First IT Solutions Provider</p>
         </div>
-    </section>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/business-units.html">Business Units</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/skytech.html">SkyTech Solutions</a></li>
+            <li><a href="/skybusiness.html">SkyBusiness Software</a></li>
+            <li><a href="/skydigital.html">SkyDigital Agency</a></li>
+            <li><a href="/skycloud.html">SkyCloud Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Indoskyware Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>IndoSkyware</h3>
-                <p>AI-Powered Business Automation</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/indoskyware" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/indoskyware" target="_blank">Instagram</a>
-                    <a href="https://x.com/SkywareID" target="_blank">X</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Products</h4>
-                <a href="products.html#listie">Listie AI</a>
-                <a href="products.html#hros">HROS</a>
-                <a href="products.html#letsee">Letsee</a>
-                <a href="products.html#erp">Skyware ERP</a>
-            </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p>📍 APL Tower, 26th Floor, Unit T3<br>Jakarta Barat, DKI Jakarta 11470</p>
-                <p>✉️ info@indoskyware.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 IndoSkyware. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>

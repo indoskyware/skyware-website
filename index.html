@@ -1,163 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndoSkyware | AI-Powered Business Automation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indoskyware Group - AI-First IT Solutions Provider. Intelligence Built In. Results Built In.">
+  <meta name="keywords" content="AI, IT solutions, software development, cloud services, digital transformation">
+  <title>Indoskyware Group | AI-First IT Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/logos/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">IndoSkyware</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <a href="contact.html" class="btn btn-outline">Get Demo</a>
-        </div>
-    </nav>
+  <header class="header">
+    <div class="container header-container">
+      <a href="/" class="logo">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+          <circle cx="24" cy="24" r="8" fill="currentColor"/>
+          <circle cx="12" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+          <circle cx="36" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+          <circle cx="12" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+          <circle cx="36" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+          <line x1="16" y1="18" x2="20" y2="22" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="32" y1="18" x2="28" y2="22" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="16" y1="30" x2="20" y2="26" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="32" y1="30" x2="28" y2="26" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-text">Indoskyware</span>
+      </a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/business-units.html" class="nav-link">Business Units</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
+  <main>
     <section class="hero">
-        <div class="hero-glow"></div>
+      <div class="container hero-container">
         <div class="hero-content">
-            <span class="hero-badge">🤖 AI-Powered Business Automation</span>
-            <h1 class="hero-title">Transform Your Business<br>with <span class="gradient-text">Intelligent AI</span></h1>
-            <p class="hero-subtitle">From Idea into Code. From Data into Decision.<br>From Problem into Solution.</p>
-            <div class="hero-cta">
-                <a href="products.html" class="btn btn-primary">Explore Products</a>
-                <a href="contact.html" class="btn btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                    Watch Demo
-                </a>
-            </div>
+          <span class="hero-badge">AI-First IT Solutions</span>
+          <h1 class="hero-title">Intelligence Built In.<br><span class="gradient-text">Results Built In.</span></h1>
+          <p class="hero-subtitle">We transform businesses through AI-powered solutions, delivering innovation that drives measurable outcomes.</p>
+          <div class="hero-actions">
+            <a href="/contact.html" class="btn btn-primary">Get Started</a>
+            <a href="/business-units.html" class="btn btn-secondary">Our Services</a>
+          </div>
         </div>
-        <div class="hero-card">
-            <span class="card-badge">✨ Featured Product</span>
-            <h3>Listie AI</h3>
-            <p>AI-Powered Conversion Engine<br>for Property Agents</p>
-            <div class="card-stat">
-                <span class="stat-value">↑ 300%</span>
-                <span class="stat-label">Conversion Rate</span>
-            </div>
-            <a href="products.html#listie" class="btn btn-sm">Learn More →</a>
+        <div class="hero-visual">
+          <div class="hero-graphic">
+            <div class="node node-center"></div>
+            <div class="node node-tl"></div>
+            <div class="node node-tr"></div>
+            <div class="node node-bl"></div>
+            <div class="node node-br"></div>
+            <svg class="connections" viewBox="0 0 200 200">
+              <line x1="100" y1="100" x2="50" y2="50" class="connection"/>
+              <line x1="100" y1="100" x2="150" y2="50" class="connection"/>
+              <line x1="100" y1="100" x2="50" y2="150" class="connection"/>
+              <line x1="100" y1="100" x2="150" y2="150" class="connection"/>
+            </svg>
+          </div>
         </div>
+      </div>
+      <div class="hero-glow"></div>
     </section>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number">50+</span>
-                <span class="stat-text">Clients</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">10+</span>
-                <span class="stat-text">Years</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">4</span>
-                <span class="stat-text">AI Products</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">99.9%</span>
-                <span class="stat-text">Uptime</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">24/7</span>
-                <span class="stat-text">Support</span>
-            </div>
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Business Units</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Products Preview -->
-    <section class="products-preview">
+    <section class="business-units-preview">
+      <div class="container">
         <div class="section-header">
-            <span class="section-badge">Our Products</span>
-            <h2>AI Solutions for<br>Every Business Need</h2>
+          <h2 class="section-title">Our Business Units</h2>
+          <p class="section-subtitle">Comprehensive IT solutions across four specialized divisions</p>
         </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon listie-icon">🎯</div>
-                <h3>Listie AI</h3>
-                <p>AI-Powered Conversion Engine for Property Agents</p>
-                <a href="products.html#listie" class="link-arrow">Learn more →</a>
+        <div class="units-grid">
+          <a href="/skytech.html" class="unit-card unit-card-tech">
+            <div class="unit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
             </div>
-            <div class="product-card">
-                <div class="product-icon hros-icon">👥</div>
-                <h3>HROS</h3>
-                <p>Smart HRIS for Outsourcing Companies</p>
-                <a href="products.html#hros" class="link-arrow">Learn more →</a>
+            <h3>SkyTech Solutions</h3>
+            <p>Enterprise software development and technology consulting</p>
+            <span class="unit-arrow">→</span>
+          </a>
+          <a href="/skybusiness.html" class="unit-card unit-card-business">
+            <div class="unit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
             </div>
-            <div class="product-card">
-                <div class="product-icon letsee-icon">👁️</div>
-                <h3>Letsee</h3>
-                <p>AI-Powered Crowdsourcing Intelligence Platform</p>
-                <a href="products.html#letsee" class="link-arrow">Learn more →</a>
+            <h3>SkyBusiness Software</h3>
+            <p>Business management software and ERP solutions</p>
+            <span class="unit-arrow">→</span>
+          </a>
+          <a href="/skydigital.html" class="unit-card unit-card-digital">
+            <div class="unit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
             </div>
-            <div class="product-card">
-                <div class="product-icon erp-icon">📊</div>
-                <h3>Skyware ERP</h3>
-                <p>Enterprise Software Enhanced with AI</p>
-                <a href="products.html#erp" class="link-arrow">Learn more →</a>
+            <h3>SkyDigital Agency</h3>
+            <p>Digital marketing and creative services</p>
+            <span class="unit-arrow">→</span>
+          </a>
+          <a href="/skycloud.html" class="unit-card unit-card-cloud">
+            <div class="unit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
             </div>
+            <h3>SkyCloud Services</h3>
+            <p>Cloud infrastructure and managed services</p>
+            <span class="unit-arrow">→</span>
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="ai-capabilities">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">AI-Powered Capabilities</h2>
+          <p class="section-subtitle">Leveraging cutting-edge AI to transform your business</p>
+        </div>
+        <div class="capabilities-grid">
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Predictive Analytics</h3>
+            <p>Data-driven insights and forecasting to anticipate market trends and customer behavior.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </div>
+            <h3>Machine Learning</h3>
+            <p>Custom ML models that learn from your data to automate and optimize processes.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-8 8 4 4 0 0 1-2-8 4 4 0 0 1 0-2"/>
+              </svg>
+            </div>
+            <h3>Intelligent Automation</h3>
+            <p>Streamline operations with AI-powered workflow automation and RPA solutions.</p>
+          </div>
+          <div class="capability-card">
+            <div class="capability-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <h3>NLP & Chatbots</h3>
+            <p>Natural language processing for customer service and knowledge management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
         <div class="cta-content">
-            <h2>Ready to Transform<br>Your Business?</h2>
-            <p>Schedule a demo with our team and discover how AI can revolutionize your operations.</p>
-            <a href="contact.html" class="btn btn-primary btn-lg">Get Free Demo</a>
+          <h2>Ready to Transform Your Business?</h2>
+          <p>Let's discuss how our AI-powered solutions can drive your success.</p>
+          <a href="/contact.html" class="btn btn-primary">Contact Us Today</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>IndoSkyware</h3>
-                <p>AI-Powered Business Automation</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/indoskyware" target="_blank">LinkedIn</a>
-                    <a href="https://www.instagram.com/indoskyware" target="_blank">Instagram</a>
-                    <a href="https://x.com/SkywareID" target="_blank">X</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Products</h4>
-                <a href="products.html#listie">Listie AI</a>
-                <a href="products.html#hros">HROS</a>
-                <a href="products.html#letsee">Letsee</a>
-                <a href="products.html#erp">Skyware ERP</a>
-            </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p>📍 APL Tower, 26th Floor, Unit T3<br>Jakarta Barat, DKI Jakarta 11470</p>
-                <p>✉️ info@indoskyware.com</p>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="24" r="8" fill="currentColor"/>
+              <circle cx="12" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+              <circle cx="36" cy="16" r="4" fill="currentColor" opacity="0.7"/>
+              <circle cx="12" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+              <circle cx="36" cy="32" r="4" fill="currentColor" opacity="0.7"/>
+            </svg>
+            <span class="logo-text">Indoskyware</span>
+          </a>
+          <p>AI-First IT Solutions Provider</p>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 IndoSkyware. All rights reserved.</p>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/business-units.html">Business Units</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/skytech.html">SkyTech Solutions</a></li>
+            <li><a href="/skybusiness.html">SkyBusiness Software</a></li>
+            <li><a href="/skydigital.html">SkyDigital Agency</a></li>
+            <li><a href="/skycloud.html">SkyCloud Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Indoskyware Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>
