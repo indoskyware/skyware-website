@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skyware — The Software &amp; AI Company</title>
+<meta name="description" content="Skyware builds the software businesses run on. Makers of Skyware ERP, HROS and Listie — enterprise systems and the vertical AI that comes next." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%231B15D6'/%3E%3Cstop offset='1' stop-color='%234F46E5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='11' fill='url(%23g)'/%3E%3Cg stroke='white' stroke-width='5.5' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M12 21.5L24 10.5 36 21.5'/%3E%3Cpath d='M12 31.5L24 20.5 36 31.5' opacity='.62'/%3E%3Cpath d='M12 41.5L24 30.5 36 41.5' opacity='.3'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0a0f1e;
+    --ink-2:#0f172a;
+    --slate:#475569;
+    --muted:#64748b;
+    --line:#e6eaf1;
+    --line-2:#eef2f8;
+    --bg:#ffffff;
+    --bg-soft:#f7f9fc;
+    --blue:#2563eb;
+    --blue-600:#1d4ed8;
+    --blue-300:#93c5fd;
+    --cyan:#22d3ee;
+    --sky:#60a5fa;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 30px rgba(15,23,42,.06);
+    --shadow-lg:0 20px 60px rgba(9,15,30,.14);
+    --wrap:1160px;
+    --ff-sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    --ff-serif:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--ff-sans);
+    color:var(--ink-2);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3,h4{font-family:var(--ff-serif);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin:0}
+  p{margin:0}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--ff-sans);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue-600);
+  }
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px}
+  .section{padding:96px 0}
+  .section-head{max-width:640px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(28px,4vw,42px);margin:16px 0 14px}
+  .section-head p{color:var(--slate);font-size:17px}
+  .lead{font-size:19px;color:var(--slate)}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:var(--ff-sans);font-weight:600;font-size:15px;
+    padding:13px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;
+    transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease;
+    white-space:nowrap;
+  }
+  .btn svg{width:16px;height:16px}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(10,15,30,.28)}
+  .btn-blue{background:linear-gradient(120deg,var(--blue),var(--blue-600));color:#fff}
+  .btn-blue:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.34)}
+  .btn-ghost{background:#fff;color:var(--ink-2);border-color:var(--line)}
+  .btn-ghost:hover{border-color:#cbd5e1;transform:translateY(-2px)}
+  .btn-light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.22)}
+  .btn-light:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(255,255,255,.72);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease,box-shadow .2s ease;
+  }
+  header.scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(15,23,42,.05)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--ff-serif);font-weight:600;font-size:20px;letter-spacing:-.02em}
+  .brand .mark{width:32px;height:32px;flex:0 0 auto}
+  .brand small{font-family:var(--ff-sans);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;line-height:1;margin-top:2px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--slate);transition:color .15s ease}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:8px;color:var(--ink)}
+  .menu-btn svg{width:26px;height:26px}
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;color:#eaf1ff;
+    background:
+      radial-gradient(1200px 600px at 78% -10%,rgba(34,211,238,.20),transparent 60%),
+      radial-gradient(1000px 700px at 12% 8%,rgba(96,165,250,.22),transparent 55%),
+      linear-gradient(180deg,#0a0f1e,#0b1327 55%,#0a0f1e);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(900px 500px at 50% 0%,#000,transparent 75%);
+    -webkit-mask-image:radial-gradient(900px 500px at 50% 0%,#000,transparent 75%);
+  }
+  .hero-inner{position:relative;z-index:2;padding:118px 0 122px;max-width:860px}
+  .pill{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#cfe0ff;margin-bottom:26px;
+  }
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(34,211,238,.18)}
+  .hero h1{font-size:clamp(40px,6.4vw,74px);color:#fff;letter-spacing:-.025em}
+  .hero h1 .grad{background:linear-gradient(100deg,#7cc4ff,#22d3ee 60%,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{margin-top:24px;font-size:clamp(17px,2vw,20px);color:#b9c6e2;max-width:640px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .hero-stats{
+    position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+    padding:30px 0 90px;
+  }
+  .stat{border-left:2px solid rgba(255,255,255,.12);padding-left:18px}
+  .stat b{font-family:var(--ff-serif);font-size:34px;font-weight:600;color:#fff;display:block;line-height:1}
+  .stat span{font-size:13.5px;color:#93a4c6}
+
+  /* Marquee / trust */
+  .trust{border-top:1px solid rgba(255,255,255,.08);background:#0a0f1e;color:#7f8fb0}
+  .trust .wrap{display:flex;align-items:center;gap:34px;flex-wrap:wrap;justify-content:center;padding:22px 24px}
+  .trust span{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+  .trust b{font-family:var(--ff-serif);color:#c7d2e8;font-size:19px;font-weight:600}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+  .about-grid h2{font-size:clamp(28px,4vw,44px);margin-bottom:20px}
+  .about-grid p+p{margin-top:16px}
+  .about-grid .lead{color:var(--slate)}
+  .timeline{display:grid;gap:14px}
+  .tl-item{
+    display:flex;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-sm);
+    background:var(--bg);box-shadow:var(--shadow);
+  }
+  .tl-item .yr{font-family:var(--ff-serif);font-weight:600;color:var(--blue-600);font-size:15px;min-width:64px}
+  .tl-item h4{font-size:16px;margin-bottom:3px}
+  .tl-item p{font-size:14px;color:var(--muted)}
+
+  /* Portfolio */
+  .portfolio{background:var(--bg-soft);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;
+    display:flex;flex-direction:column;box-shadow:var(--shadow);
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:#dbe3ef}
+  .card .logo{
+    width:52px;height:52px;display:grid;place-items:center;margin-bottom:20px;
+  }
+  .card h3{font-size:23px;margin-bottom:6px}
+  .card .role{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .card p{color:var(--slate);font-size:15px}
+  .card .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+  .tag{font-size:12px;font-weight:500;color:var(--slate);background:var(--bg-soft);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  .card .foot{margin-top:auto;padding-top:22px;display:flex;align-items:center;justify-content:space-between}
+  .card .link{font-weight:600;font-size:14px;color:var(--blue-600);display:inline-flex;align-items:center;gap:7px;transition:gap .18s ease}
+  .card:hover .link{gap:11px}
+  .badge-ai{
+    position:absolute;top:20px;right:20px;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:5px 11px;border-radius:999px;color:#0a2a33;
+    background:linear-gradient(120deg,#67e8f9,#22d3ee);
+  }
+  .quote-strip{margin-top:34px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto}
+  .quote-strip p{font-family:var(--ff-serif);font-size:clamp(20px,2.6vw,27px);color:var(--ink-2);line-height:1.35}
+  .quote-strip .em{color:var(--blue-600)}
+
+  /* Insights */
+  .insights-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:26px}
+  .feature{
+    background:linear-gradient(160deg,#0b1327,#0f1c3a);color:#e6eefc;border-radius:var(--radius);
+    padding:38px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;min-height:380px;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .feature::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 0%,rgba(34,211,238,.22),transparent 60%)}
+  .feature>*{position:relative;z-index:2}
+  .feature .kicker{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7dd3fc;margin-bottom:14px}
+  .feature h3{font-size:clamp(24px,3vw,32px);color:#fff;margin-bottom:14px}
+  .feature p{color:#aebbd8;font-size:15.5px}
+  .feature .meta{margin-top:22px;font-size:13px;color:#8394b8;display:flex;gap:14px;align-items:center}
+  .insight-col{display:grid;gap:20px;align-content:start}
+  .insight{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;cursor:pointer;
+  }
+  .insight:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#dbe3ef}
+  .insight .kicker{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-600);margin-bottom:9px}
+  .insight h4{font-size:19px;margin-bottom:8px}
+  .insight p{font-size:14.5px;color:var(--slate)}
+  .insight .meta{margin-top:14px;font-size:12.5px;color:var(--muted)}
+
+  /* Investors */
+  .investors{background:var(--ink);color:#dbe4f7;position:relative;overflow:hidden}
+  .investors::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 90% 10%,rgba(37,99,235,.22),transparent 60%)}
+  .investors .wrap{position:relative;z-index:2}
+  .inv-top{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:52px}
+  .investors .eyebrow{color:#7dd3fc}
+  .investors .eyebrow::before{background:linear-gradient(90deg,#7dd3fc,#22d3ee)}
+  .investors h2{color:#fff;font-size:clamp(28px,4vw,44px);margin:16px 0 0}
+  .investors .lead{color:#a7b6d6}
+  .inv-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:44px}
+  .metric{border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:26px;background:rgba(255,255,255,.03)}
+  .metric b{font-family:var(--ff-serif);font-size:38px;font-weight:600;color:#fff;display:block;line-height:1}
+  .metric span{font-size:13.5px;color:#93a4c6;display:block;margin-top:8px}
+  .inv-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:44px}
+  .inv-card{border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:26px;background:rgba(255,255,255,.02)}
+  .inv-card h4{color:#fff;font-size:18px;margin-bottom:8px}
+  .inv-card p{color:#9fb0d1;font-size:14.5px}
+  .inv-card .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;background:rgba(125,211,252,.14);color:#7dd3fc}
+  .inv-card .ic svg{width:20px;height:20px}
+  .inv-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 30px;border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);background:rgba(255,255,255,.04)}
+  .inv-foot h3{color:#fff;font-size:22px}
+  .inv-foot p{color:#9fb0d1;font-size:14.5px;margin-top:4px}
+
+  /* Careers */
+  .careers .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+  .perk{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--slate)}
+  .perk svg{width:20px;height:20px;color:var(--blue-600);flex:0 0 auto;margin-top:2px}
+  .roles{display:grid;gap:12px}
+  .role{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:20px 24px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;box-shadow:var(--shadow);
+    transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+  }
+  .role:hover{transform:translateX(4px);border-color:#dbe3ef;box-shadow:var(--shadow-lg)}
+  .role h4{font-size:17px;margin-bottom:5px}
+  .role .r-meta{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .role .r-meta em{font-style:normal;background:var(--bg-soft);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+  .role .apply{font-weight:600;font-size:14px;color:var(--blue-600);display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+  .division{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--blue-600)}
+
+  /* CTA band */
+  .cta-band{padding:90px 0}
+  .cta-inner{
+    background:linear-gradient(120deg,#0b1327,#12203f);border-radius:26px;padding:60px;text-align:center;color:#fff;position:relative;overflow:hidden;
+    box-shadow:var(--shadow-lg);
+  }
+  .cta-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 360px at 20% 0%,rgba(34,211,238,.20),transparent 60%),radial-gradient(700px 360px at 90% 100%,rgba(96,165,250,.20),transparent 60%)}
+  .cta-inner>*{position:relative;z-index:2}
+  .cta-inner h2{font-size:clamp(28px,4vw,42px)}
+  .cta-inner p{color:#b9c6e2;font-size:17px;max-width:560px;margin:16px auto 30px}
+  .cta-inner .hero-cta{justify-content:center}
+
+  /* Footer */
+  footer{background:#080d19;color:#93a4c6;padding:70px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+  footer h5{font-family:var(--ff-sans);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#c7d2e8;margin:0 0 16px;font-weight:600}
+  footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+  footer ul a{font-size:14px;color:#93a4c6;transition:color .15s ease}
+  footer ul a:hover{color:#fff}
+  .foot-brand .brand{color:#fff;margin-bottom:16px}
+  .foot-brand p{font-size:14px;max-width:300px}
+  .foot-brand .socials{display:flex;gap:10px;margin-top:20px}
+  .foot-brand .socials a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#c7d2e8;transition:background .16s ease,transform .16s ease}
+  .foot-brand .socials a:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .foot-brand .socials svg{width:18px;height:18px}
+  .foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:26px;font-size:13px;color:#68789b}
+  .foot-bottom a{color:#93a4c6}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Responsive */
+  @media (max-width:980px){
+    .about-grid,.insights-grid,.inv-top,.careers .split{grid-template-columns:1fr;gap:40px}
+    .cards,.inv-cards{grid-template-columns:1fr 1fr}
+    .inv-metrics{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .nav-links,.nav-cta .btn{display:none}
+    .menu-btn{display:inline-flex}
+    .nav-cta{gap:0}
+    .mobile-open .nav-links{
+      display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+      background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);padding:8px 0;
+    }
+    .mobile-open .nav-links a{padding:14px 24px;font-size:16px;border-bottom:1px solid var(--line-2)}
+    .section{padding:70px 0}
+    .hero-inner{padding:80px 0 70px}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:26px 18px;padding:20px 0 70px}
+    .cards,.inv-cards,.inv-metrics,.perks,.foot-grid{grid-template-columns:1fr}
+    .cta-inner{padding:40px 26px}
+    .inv-metrics{grid-template-columns:1fr 1fr}
+    .role{align-items:flex-start;flex-direction:column}
+  }
+  @media (max-width:420px){
+    .inv-metrics{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="wrap nav" id="nav">
+    <a class="brand" href="#top" aria-label="Skyware home">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><defs><linearGradient id="skmark" x1="8" y1="44" x2="40" y2="6" gradientUnits="userSpaceOnUse"><stop stop-color="#1B15D6"/><stop offset="1" stop-color="#5B54F0"/></linearGradient></defs><g stroke="url(#skmark)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5 L24 10.5 L36 21.5"/><path d="M12 31.5 L24 20.5 L36 31.5" opacity="0.62"/><path d="M12 41.5 L24 30.5 L36 41.5" opacity="0.3"/></g></svg>
+      <span>Skyware<small>Software &amp; AI</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#portfolio">Products</a>
+      <a href="#insights">Insights</a>
+      <a href="#investors">Investors</a>
+      <a href="#careers">Careers</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contact">Contact us</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="pill"><span class="dot"></span>Software &amp; AI — building the systems businesses run on</span>
+      <h1>We build the software companies run on — and the <span class="grad">AI that comes next</span>.</h1>
+      <p>Skyware is a software company. For years we've designed, built and operated enterprise systems — ERP, HR, POS and CRM. Today we're channelling that operating experience into a new generation of vertical AI products.</p>
+      <div class="hero-cta">
+        <a class="btn btn-blue" href="#portfolio">See what we build
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-light" href="#investors">Investor relations</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat reveal"><b>3</b><span>Products across ERP, HR &amp; AI</span></div>
+      <div class="stat reveal"><b>12+</b><span>Years shipping enterprise software</span></div>
+      <div class="stat reveal"><b>300+</b><span>Businesses served across the region</span></div>
+      <div class="stat reveal"><b>1</b><span>Team behind it all</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span>Makers of</span>
+    <b>Skyware ERP</b>
+    <b>HROS</b>
+    <b>Listie</b>
+    <span>Built in-house, end to end</span>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">Who we are</span>
+      <h2>The company behind the products.</h2>
+      <p class="lead">We started by solving the least glamorous, most important problem in business: making the numbers add up. Accounting, inventory, payroll, sales — the operational core.</p>
+      <p>Building enterprise software taught us something valuable: the hardest part isn't the model or the interface, it's understanding how a business actually works. That domain knowledge is now our unfair advantage as we build AI.</p>
+      <p>We're deliberately small — one team behind a family of focused products, each with its own name and its own market, sharing the same engineering, design and domain obsession. We'd rather ship three sharp products than one bloated suite.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item"><div class="yr">Then</div><div><h4>Enterprise software</h4><p>Built and implemented ERP, HR, POS and CRM systems for growing companies.</p></div></div>
+      <div class="tl-item"><div class="yr">Focus</div><div><h4>Products with their own names</h4><p>Skyware ERP, HROS, Listie — each serving its market under one maker.</p></div></div>
+      <div class="tl-item"><div class="yr">Now</div><div><h4>Vertical AI</h4><p>Applying deep domain knowledge to build AI that does the work, not just the reporting.</p></div></div>
+      <div class="tl-item"><div class="yr">Next</div><div><h4>The agentic enterprise</h4><p>Software that observes, decides and acts — with humans in command.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section class="section portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we build</span>
+      <h2>Three products. One maker.</h2>
+      <p>Each product has its own name, its own site and its own market. What they share is the team that builds them — and an obsession with the operational spine of business.</p>
+    </div>
+    <div class="cards">
+      <!-- Skyware ERP -->
+      <article class="card reveal">
+        <div class="logo"><svg viewBox="0 0 48 48" width="46" height="46" fill="none" aria-hidden="true"><defs><linearGradient id="skmark-erp" x1="8" y1="44" x2="40" y2="6" gradientUnits="userSpaceOnUse"><stop stop-color="#1B15D6"/><stop offset="1" stop-color="#5B54F0"/></linearGradient></defs><g stroke="url(#skmark-erp)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5 L24 10.5 L36 21.5"/><path d="M12 31.5 L24 20.5 L36 31.5" opacity="0.62"/><path d="M12 41.5 L24 30.5 L36 41.5" opacity="0.3"/></g></svg></div>
+        <div class="role">Enterprise Platform</div>
+        <h3>Skyware ERP</h3>
+        <p>An integrated ERP for SMEs and corporations. One connected ledger across the whole operation — no spreadsheets holding the business together.</p>
+        <div class="tags">
+          <span class="tag">Accounting</span><span class="tag">Finance</span><span class="tag">Purchasing</span>
+          <span class="tag">Inventory</span><span class="tag">Sales</span><span class="tag">Fixed Assets</span><span class="tag">Production</span>
+        </div>
+        <div class="foot"><a class="link" href="#contact">Learn more <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <!-- HROS -->
+      <article class="card reveal">
+        <div class="logo"><svg viewBox="0 0 48 48" width="46" height="46" fill="none" aria-hidden="true"><defs><linearGradient id="hros-mark" x1="8" y1="40" x2="40" y2="8" gradientUnits="userSpaceOnUse"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#8B93F8"/></linearGradient></defs><g stroke="url(#hros-mark)" stroke-width="5" stroke-linecap="round"><path d="M32 10.1 A16 16 0 0 1 32 37.9"/><path d="M21.2 39.8 A16 16 0 0 1 8.2 26.8"/><path d="M10.1 16 A16 16 0 0 1 21.2 8.2"/></g><circle cx="8.2" cy="21.2" r="3" fill="#6B75E8"/><circle cx="26.8" cy="8.2" r="3" fill="#6B75E8"/></svg></div>
+        <div class="role">People Operations</div>
+        <h3>HROS</h3>
+        <p>A human-resources operating system built for how organisations really look — a single company, a multi-entity group, or an outsourcing provider managing thousands of deployed staff.</p>
+        <div class="tags">
+          <span class="tag">Core HR</span><span class="tag">Payroll</span><span class="tag">Multi-entity</span>
+          <span class="tag">Outsourcing</span><span class="tag">Attendance</span>
+        </div>
+        <div class="foot"><a class="link" href="https://hros.skyware.systems" target="_blank" rel="noopener">Visit HROS <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span style="font-size:12.5px;color:var(--muted)">by Skyware</span></div>
+      </article>
+      <!-- Listie -->
+      <article class="card reveal">
+        <span class="badge-ai">VERTICAL AI</span>
+        <div class="logo"><svg viewBox="0 0 106 106" width="44" height="44" fill="none" aria-hidden="true"><rect x="29" y="5" width="48" height="48" rx="11" stroke="#1F4D3A" stroke-width="5"/><rect x="53" y="29" width="48" height="48" rx="11" stroke="#1F4D3A" stroke-width="5"/><rect x="29" y="53" width="48" height="48" rx="11" stroke="#1F4D3A" stroke-width="5"/><rect x="5" y="29" width="48" height="48" rx="11" stroke="#1F4D3A" stroke-width="5"/></svg></div>
+        <div class="role">Vertical AI · Real Estate</div>
+        <h3>Listie</h3>
+        <p>Vertical AI for real-estate brokers — capturing leads, mapping co-broke relationships, scheduling viewings and keeping every listing alive and accurate.</p>
+        <p style="margin-top:12px;font-family:var(--ff-serif);color:var(--ink-2);font-size:16.5px;line-height:1.4">"We're not a property portal — we're the <span style="color:var(--blue-600)">broker's operating system</span>."</p>
+        <div class="tags">
+          <span class="tag">Leads</span><span class="tag">Co-broke mapping</span><span class="tag">Scheduling</span><span class="tag">Listing management</span>
+        </div>
+        <div class="foot"><a class="link" href="https://listie.id" target="_blank" rel="noopener">Visit Listie <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span style="font-size:12.5px;color:var(--muted)">by Skyware</span></div>
+      </article>
+    </div>
+    <div class="quote-strip reveal">
+      <p>Portals list properties. <span class="em">We run the broker's business</span> — from first lead to closed deal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="section" id="insights">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Insights</span>
+      <h2>Where AI is going in the next 5–10 years.</h2>
+      <p>Notes from the team building it. Our view on how artificial intelligence reshapes the software that businesses depend on.</p>
+    </div>
+    <div class="insights-grid">
+      <article class="feature reveal">
+        <div>
+          <div class="kicker">The big shift · 9 min read</div>
+          <h3>Vertical AI will quietly eat the back office.</h3>
+          <p>The first wave of AI was general-purpose and horizontal. The durable value over the next decade will be vertical: models wrapped in deep domain workflow, trained on the messy reality of one industry. The winners won't be the smartest models — they'll be the ones that understand a business well enough to be trusted with its work. In accounting, HR and real estate, that means moving from software that records what happened to software that does the next thing for you.</p>
+          <div class="meta"><span>By the Skyware team</span><span>•</span><span>Strategy</span></div>
+        </div>
+      </article>
+      <div class="insight-col">
+        <article class="insight reveal">
+          <div class="kicker">Agents · 6 min</div>
+          <h4>The agentic enterprise: software that acts.</h4>
+          <p>For thirty years business software has been a system of record. The next generation is a system of action — reconciling, ordering, scheduling and drafting, then asking a human only where judgment is required.</p>
+          <div class="meta">Automation · 2026</div>
+        </article>
+        <article class="insight reveal">
+          <div class="kicker">Product · 5 min</div>
+          <h4>Why the next ERP won't have forms.</h4>
+          <p>Menus and data-entry screens were a workaround for computers that couldn't understand us. As language becomes the interface, the ERP of 2032 looks less like a database and more like a colleague you brief.</p>
+          <div class="meta">Interfaces · 2026</div>
+        </article>
+        <article class="insight reveal">
+          <div class="kicker">Trust · 7 min</div>
+          <h4>Trust, not intelligence, is the real moat.</h4>
+          <p>Any company can call a model. Few can be trusted to let AI touch payroll, the ledger or a client's deal. The moat is proprietary data, domain judgment and accountability — exactly what years of enterprise software builds.</p>
+          <div class="meta">Governance · 2026</div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INVESTORS ================= -->
+<section class="section investors" id="investors">
+  <div class="wrap">
+    <div class="inv-top">
+      <div class="reveal">
+        <span class="eyebrow">Investor relations</span>
+        <h2>Profitable software, funding an AI compounding machine.</h2>
+      </div>
+      <p class="lead reveal">A rare combination for investors: durable, cash-generative enterprise software revenue underwriting a disciplined bet on vertical AI — with domain data and distribution most AI startups can only wish for.</p>
+    </div>
+
+    <!-- Only publish numbers here that are real and defensible — this section gets diligence. -->
+    <div class="inv-metrics">
+      <div class="metric reveal"><b>3</b><span>Products in market — ERP, HR and vertical AI</span></div>
+      <div class="metric reveal"><b>12+</b><span>Years building and implementing enterprise software</span></div>
+      <div class="metric reveal"><b>SaaS</b><span>Recurring revenue model across the portfolio</span></div>
+      <div class="metric reveal"><b>1</b><span>Focused team — software revenue funds AI R&amp;D</span></div>
+    </div>
+
+    <div class="inv-cards">
+      <div class="inv-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h4>Resilient base</h4>
+        <p>Mission-critical ERP and HR systems are deeply embedded, with high switching costs and predictable recurring revenue.</p>
+      </div>
+      <div class="inv-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.8 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
+        <h4>Asymmetric AI upside</h4>
+        <p>Vertical AI ventures like Listie attack large markets with proprietary data and a built-in path to distribution.</p>
+      </div>
+      <div class="inv-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Disciplined by design</h4>
+        <p>A lean team, clear capital allocation, transparent reporting, and a long-term compounding mindset.</p>
+      </div>
+    </div>
+
+    <div class="inv-foot reveal">
+      <div>
+        <h3>Interested in the Skyware story?</h3>
+        <p>Request our latest investor briefing and company overview.</p>
+      </div>
+      <a class="btn btn-blue" href="#contact">Request investor deck
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAREERS ================= -->
+<section class="section careers" id="careers">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Careers</span>
+      <h2>Build the software the next decade runs on.</h2>
+      <p>We're a small team with outsized ambition — and we like it that way. If you want hard problems, real users, and software that touches the core of a business, we should talk.</p>
+    </div>
+    <div class="split">
+      <div class="reveal">
+        <h3 style="font-size:24px;margin-bottom:12px">Why Skyware</h3>
+        <p class="lead" style="font-size:16.5px">Enterprise-grade problems with startup-grade ownership. You'll ship to real businesses, work close to the domain, and help define what AI-native software looks like.</p>
+        <div class="perks">
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Real ownership, small teams</div>
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Hybrid &amp; remote-friendly</div>
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Work across the AI frontier</div>
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Learning budget &amp; growth</div>
+        </div>
+      </div>
+      <div class="roles reveal">
+        <div class="role">
+          <div><span class="division">Listie · AI</span><h4>Senior AI / ML Engineer</h4><div class="r-meta"><em>Full-time</em><em>Hybrid</em><em>Vertical AI</em></div></div>
+          <a class="apply" href="#contact">Apply <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="role">
+          <div><span class="division">Skyware ERP</span><h4>Senior Backend Engineer (PHP / Laravel)</h4><div class="r-meta"><em>Full-time</em><em>Hybrid</em><em>Platform</em></div></div>
+          <a class="apply" href="#contact">Apply <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="role">
+          <div><span class="division">Listie</span><h4>Product Designer</h4><div class="r-meta"><em>Full-time</em><em>Remote</em><em>Design</em></div></div>
+          <a class="apply" href="#contact">Apply <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="role">
+          <div><span class="division">Skyware ERP</span><h4>ERP Implementation Consultant</h4><div class="r-meta"><em>Full-time</em><em>On-site / Hybrid</em><em>Delivery</em></div></div>
+          <a class="apply" href="#contact">Apply <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="role">
+          <div><span class="division">Skyware</span><h4>Growth &amp; Partnerships Lead</h4><div class="r-meta"><em>Full-time</em><em>Hybrid</em><em>Commercial</em></div></div>
+          <a class="apply" href="#contact">Apply <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA / CONTACT ================= -->
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <span class="eyebrow" style="color:#7dd3fc">Get in touch</span>
+      <h2>Let's talk — clients, investors, and future teammates.</h2>
+      <p>Whether you want to modernise your operations, learn about the company, or join the team, we'd love to hear from you.</p>
+      <div class="hero-cta">
+        <a class="btn btn-blue" href="mailto:service@indoskyware.com">service@indoskyware.com</a>
+        <a class="btn btn-light" href="#top">Back to top</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><defs><linearGradient id="skmark-f" x1="8" y1="44" x2="40" y2="6" gradientUnits="userSpaceOnUse"><stop stop-color="#7C86FF"/><stop offset="1" stop-color="#B4BCFF"/></linearGradient></defs><g stroke="url(#skmark-f)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5 L24 10.5 L36 21.5"/><path d="M12 31.5 L24 20.5 L36 31.5" opacity="0.62"/><path d="M12 41.5 L24 30.5 L36 41.5" opacity="0.3"/></g></svg>
+          <span style="color:#fff">Skyware<small>Software &amp; AI</small></span>
+        </a>
+        <p>A software and AI company building the systems businesses run on — and the intelligence that comes next. Makers of Skyware ERP, HROS and Listie.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/indoskyware" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4z"/></svg></a>
+          <a href="https://x.com/SkywareID" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2H21l-6.55 7.5L22 22h-6.16l-4.83-6.3L5.5 22H3l7-8-7.2-12h6.3l4.36 5.77zM16.9 20.2h1.5L7.2 3.7H5.6z"/></svg></a>
+          <a href="https://github.com/indoskyware" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.4 9.4 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#portfolio">What we build</a></li>
+          <li><a href="#investors">Investor relations</a></li>
+          <li><a href="#insights">Insights</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li><a href="#portfolio">Skyware ERP</a></li>
+          <li><a href="https://hros.skyware.systems" target="_blank" rel="noopener">HROS <span style="font-size:11px;opacity:.6">by Skyware</span></a></li>
+          <li><a href="https://listie.id" target="_blank" rel="noopener">Listie <span style="font-size:11px;opacity:.6">by Skyware</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="mailto:service@indoskyware.com">service@indoskyware.com</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Skyware. All rights reserved.</span>
+      <span><a href="/privacy-policy/">Privacy</a> · <a href="/app-privacy-policy/">App Privacy</a> · <a href="/terms-condition/">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header shadow
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Mobile menu
+  const nav = document.getElementById('nav');
+  const menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', () => {
+    const open = nav.classList.toggle('mobile-open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => {
+      nav.classList.remove('mobile-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
+    io.observe(el);
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
