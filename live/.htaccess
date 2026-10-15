@@ -1,0 +1,7 @@
+# www.indoskyware.com: browsers must re-check the page on every visit, so an edit shows at once.
+# Added 15 Oct 2026: without it, browsers kept the July page (and its "300+") for days.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
